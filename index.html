@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um site interativo e romântico para fazer uma declaração de amor de forma divertida.">
+    <title>Surpresa para Minha GATINHA TCHUCHUCA</title>
+    <link rel="stylesheet" href="surprise.css">
+</head>
+<body>
+    
+    <div class="container" id="page1">
+        <h1 class="question">OI MORR! Você aceita jogar um jogo comigo?</h1>
+        <button class="btn" onclick="nextPage('page2')">Sim</button>
+        <button class="btn no-btn" onclick="showError()">Não</button>
+    </div>
+
+    
+    <div class="container" id="page2" style="display:none;">
+        <h1 class="question">Você sabia que eu penso em você a todo instante?</h1>
+        <button class="btn" onclick="nextPage('page3')">CLARO Q SIM!!!</button>
+        <button class="btn no-btn" onclick="showError()">Não</button>
+    </div>
+
+    
+    <div class="container" id="page3" style="display:none;">
+        <h1 class="question">E você também sabia que é a melhor parte da minha vida?</h1>
+        <button class="btn" onclick="nextPage('final')">SEIII❤️</button>
+        <button class="btn no-btn" onclick="showError()">Não</button>
+    </div>
+
+    
+    <div class="container" id="final" style="display:none;">
+        <h1 class="declaration">Eu te amo mt minha princesa! Vc real e a melhor coisa q me aconteceu,vc e meu motivo de viver vc e o meu maior incentivo na vida,sem vc eu sou incompleto.VAMOS FICAR JUNTO PRA SEMPRE MOR???💖</h1>
+        <img src="img/InShot_20241003_204653974.jpg" alt="eu e vc">
+    </div>
+
+    
+    <div class="container" id="error" style="display:none;">
+        <h1 class="error-message">Resposta Errada😢</h1>
+        <button class="btn" onclick="goBack()">Voltar</button>
+    </div>
+
+    <script>
+        function nextPage(pageId) {
+            
+            document.querySelectorAll('.container').forEach(page => page.style.display = 'none');
+            
+            
+            document.getElementById(pageId).style.display = 'flex';
+        }
+
+        function showError() {
+            
+            document.querySelectorAll('.container').forEach(page => page.style.display = 'none');
+
+            
+            document.getElementById('error').style.display = 'flex';
+        }
+
+        function goBack() {
+            
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('page1').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
